@@ -3,8 +3,12 @@ import 'package:jp_app_project_challenge/theme/custom_colors.dart';
 import 'package:jp_app_project_challenge/widgets/custom_segmented_button.dart';
 
 class BottomSheetNarrowCalculator extends StatefulWidget {
+  final Function updatePrice;
+  final Function updateSize;
   const BottomSheetNarrowCalculator({
     super.key,
+    required this.updatePrice,
+    required this.updateSize,
   });
 
   @override
@@ -16,11 +20,16 @@ class _BottomSheetNarrowCalculatorState
     extends State<BottomSheetNarrowCalculator> {
   void addItem() => setState(() {
         numberOfItems += 1;
+        widget.updatePrice(numberOfItems);
       });
+
   void removeItem() => setState(() {
         if (numberOfItems - 1 > 0) numberOfItems -= 1;
+        widget.updatePrice(numberOfItems);
       });
+
   int numberOfItems = 1;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,7 +37,7 @@ class _BottomSheetNarrowCalculatorState
         Container(
             height: 44,
             alignment: Alignment.center,
-            child: CustomSegmentedButton()),
+            child: CustomSegmentedButton(updateSize: widget.updateSize)),
         Spacer(),
         Container(
           height: 32,

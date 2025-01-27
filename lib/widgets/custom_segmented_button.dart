@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jp_app_project_challenge/theme/custom_colors.dart';
 
 class CustomSegmentedButton extends StatefulWidget {
-  const CustomSegmentedButton({super.key});
+  final Function updateSize;
+  const CustomSegmentedButton({
+    super.key,
+    required this.updateSize,
+  });
 
   @override
   State<CustomSegmentedButton> createState() => _CustomSegmentedButtonState();
@@ -47,6 +51,7 @@ class _CustomSegmentedButtonState extends State<CustomSegmentedButton> {
         setState(() {
           sizesView = newSelection.first;
         });
+        widget.updateSize(newSelection.first);
       },
     );
   }

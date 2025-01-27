@@ -41,7 +41,7 @@ class FrozenCard extends StatelessWidget {
               SizedBox(
                 width: 200,
                 child: BtnPrimary(
-                  text: 'Order Now',
+                  text: Text('Order Now', style: theme.titleMedium),
                   callBack: callBack,
                 ),
               )

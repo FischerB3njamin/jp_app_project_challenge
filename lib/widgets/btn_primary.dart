@@ -3,13 +3,11 @@ import 'package:jp_app_project_challenge/theme/custom_colors.dart';
 
 class BtnPrimary extends StatelessWidget {
   final Function callBack;
-  final String text;
+  final Widget text;
   const BtnPrimary({super.key, required this.callBack, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    TextTheme theme = Theme.of(context).textTheme;
-
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -44,10 +42,7 @@ class BtnPrimary extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Text(
-                text,
-                style: theme.titleMedium,
-              ),
+              child: text,
             ),
           ),
         ),
