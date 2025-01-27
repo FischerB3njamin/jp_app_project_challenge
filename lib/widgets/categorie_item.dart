@@ -41,7 +41,7 @@ class CategorieItem extends StatelessWidget {
                     ? CustomColors.white50
                     : CustomColors.categoryItemActiveBg,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: CustomColors.white),
+                border: Border.all(color: CustomColors.white, width: 0.75),
               ),
               child: Row(
                 children: [

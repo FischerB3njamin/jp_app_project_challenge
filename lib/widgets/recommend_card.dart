@@ -22,7 +22,7 @@ class RecommendCard extends StatelessWidget {
           width: 230,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(32),
-            border: Border.all(color: CustomColors.white50),
+            border: Border.all(color: CustomColors.white50, width: 0.5),
             gradient: LinearGradient(stops: [
               0.00,
               0.61,
