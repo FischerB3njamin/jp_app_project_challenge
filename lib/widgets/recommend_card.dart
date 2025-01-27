@@ -65,7 +65,7 @@ class RecommendCard extends StatelessWidget {
                     Spacer(),
                     SvgPicture.asset(
                       "assets/svg/Heart.svg",
-                      width: 16,
+                      width: 14,
                     ),
                     SizedBox(width: 4),
                     Text('${item.likes}')
